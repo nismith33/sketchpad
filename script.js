@@ -1,14 +1,13 @@
 const sketchpad = document.querySelector('.sketchpad');
-console.log(sketchpad)
+addCells(sketchpad, 10);
 
 function addCells(sketchpad,cellsPerRow) {
-    const cellSideLength = Math.round(Math.floor(sketchpad.clientWidth/cellsPerRow));
     for (let i = 0; i< cellsPerRow**2 ; i++) {
         const cell = document.createElement('div');
         //the cell class name will be used for clearing the board
         cell.className = "cell";
-        cell.style.width = `${cellSideLength}px`;
-        cell.style.height = `${cellSideLength}px`;
+        cell.style.height = 'auto';
+        cell.style.flex = `1 0 ${(1/cellsPerRow)*100}%`;
         cell.addEventListener('mouseenter', colorCell);
         sketchpad.appendChild(cell);
     }
@@ -23,10 +22,14 @@ const slider = document.querySelector('.slider');
 console.log(slider);
 const sliderValue = document.querySelector('.sliderValue')
 slider.addEventListener('change', updateCells)
+slider.addEventListener('input', function() {
+    sliderValue.textContent = this.value;
+});
+
+
 
 function updateCells() {
     removeCells(sketchpad);
-    sliderValue.textContent = this.value;
     addCells(sketchpad,this.value);
 }
 
