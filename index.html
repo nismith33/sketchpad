@@ -4,9 +4,16 @@
         <meta charset="UTF-8">
         <title>Sketchpad</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="sketchpad"></div>
-        <script src="script.js"></script>
+        <div class="settings">
+            <div class="size-selector">
+                <input type="range" min="10" max="100" step="10" value="50"
+                 class="slider">
+                <div class="sliderValue">50</div>
+            </div>
+        </div>
     </body>
 </html>
