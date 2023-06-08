@@ -7,14 +7,19 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="sketchpad"></div>
         <div class="settings">
             <div class="size-selector">
+                <div>Number of cells per row:</div>
                 <input type="range" min="10" max="60" step="10" value="10"
                  class="slider">
                 <div class="sliderValue">10</div>
             </div>
+            <div class="drawmodes">
+                <button class="fill selected">Fill</button>
+                <button class="shade">Shade</button>
+            </div>
             <button class="reset">Clear Sketchboard</button>
         </div>
+        <div class="sketchpad"></div>
     </body>
 </html>

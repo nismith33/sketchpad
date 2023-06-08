@@ -1,6 +1,17 @@
 /* * {
     border: 1px solid red;
 } */
+body {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 .sketchpad {
     height: 600px;
@@ -8,4 +19,14 @@
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
+}
+
+.drawmodes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selected {
+    border: 2px solid red;
 }
