@@ -26,11 +26,9 @@ slider.addEventListener('input', function() {
     sliderValue.textContent = this.value;
 });
 
-
-
 function updateCells() {
     removeCells(sketchpad);
-    addCells(sketchpad,this.value);
+    addCells(sketchpad,+sliderValue.textContent);
 }
 
 function removeCells(sketchpad) {
@@ -38,3 +36,7 @@ function removeCells(sketchpad) {
         sketchpad.removeChild(sketchpad.firstChild);
     }
 }
+
+//Reset button logic
+const reset = document.querySelector('.reset');
+reset.addEventListener('click', updateCells);
