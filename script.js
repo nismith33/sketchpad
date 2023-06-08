@@ -4,9 +4,9 @@ addCells(sketchpad, 10);
 function addCells(sketchpad,cellsPerRow) {
     for (let i = 0; i< cellsPerRow**2 ; i++) {
         const cell = document.createElement('div');
-        //the cell class name will be used for clearing the board
-        cell.className = "cell";
+        cell.className = '0';
         cell.style.height = 'auto';
+        cell.style.backgroundColor = 'white';
         cell.style.flex = `1 0 ${(1/cellsPerRow)*100}%`;
         cell.addEventListener('mouseenter', colorCell);
         sketchpad.appendChild(cell);
@@ -14,7 +14,10 @@ function addCells(sketchpad,cellsPerRow) {
 }
 
 function colorCell() {
-    this.style.backgroundColor = 'black';
+    if (+this.className<=10) {
+        this.className = +this.className + 1;
+        this.style.filter = `brightness(${1-(+this.className/10)})`;
+    }
 }
 
 //slider logic
